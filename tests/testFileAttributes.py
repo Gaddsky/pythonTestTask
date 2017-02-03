@@ -171,3 +171,7 @@ class TestFileAttributes(unittest.TestCase):
         with self.assertRaises(PermissionError):
             with open(os.path.join(self.dirname, filename), mode='r') as file:
                 file.read()
+
+
+if __name__ == '__main__':
+    unittest.main()

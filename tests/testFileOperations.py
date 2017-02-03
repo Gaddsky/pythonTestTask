@@ -188,3 +188,7 @@ class TestFileOperations(unittest.TestCase):
         read_string = open(os.path.join(self.dirname, new_name), mode='r').read()
         logging.debug("Read string: " + read_string)
         self.assertEqual(string, read_string)
+
+
+if __name__ == '__main__':
+    unittest.main()
