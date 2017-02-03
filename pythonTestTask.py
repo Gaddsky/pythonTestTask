@@ -20,6 +20,7 @@ def main():
 
     from tests import testFileOperations
     from tests import testFileAttributes
+    from tests import testNfs4Acl
 
     logging_setup()
 
@@ -27,6 +28,7 @@ def main():
 
     suite = loader.loadTestsFromModule(testFileOperations)
     suite.addTests(loader.loadTestsFromModule(testFileAttributes))
+    suite.addTests(loader.loadTestsFromModule(testNfs4Acl))
 
     runner = CustomTextTestRunner(verbosity=2)
     result = runner.run(suite)
@@ -80,6 +82,11 @@ class CustomTestResult(unittest.TestResult):
         self.test_results.append((test, "Failed"))
         logging.error(test.shortDescription() + "\n" + str(err))
         logging.debug("Test failed\n")
+
+    def addError(self, test, err):
+        self.test_results.append((test, "Failed"))
+        logging.error(test.shortDescription()+ "\n" + str(err))
+        logging.debug("Test error\n")
 
 
 class CustomTextTestRunner(unittest.TextTestRunner):

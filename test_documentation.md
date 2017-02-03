@@ -125,3 +125,29 @@ The test verifies that it's not possible to read from a file without the read pe
 
 ###### Expected results:
 Attempt to read from the file rises the exception "PermissionError"
+
+## NFSv4 ACL operations tests
+
+#### TC201 NFSv4 ACL: deny reading a file to its owner
+
+This test verifies that a user cannot read a file without the read permission
+
+###### Steps:
+1. Create a new file with some content
+2. Change permissions of the file: deny reading the file to the current user
+3. Try to read the file
+
+###### Expected results:
+Attempt to read the file rises the exception "PermissionError"
+
+#### TC202 NFSv4 ACL: deny writing to a file to its owner
+
+This test verifies that the user cannot write to a file without the write permission
+
+###### Steps:
+1. Create a new file
+2. Change permissions of the file: deny writing to the file to the current user
+3. Try to write to the file
+
+###### Expected results:
+Attempt to write to the file rises the exception "PermissionError"
