@@ -1,18 +1,18 @@
 # pythonTestTask
 
-This test suite consists of some tests of NFSv4 file system. This tests are divided into three groups:
-1. Testing some file operations
-2. Testing some file attributes operations
-3. Testing some operations with NFSv4 ACL
+This test suite consists of some tests of NFSv4 file system. This tests are divided into three groups:  
+1. Testing some file operations  
+2. Testing some file attributes operations  
+3. Testing some operations with NFSv4 ACL  
 
 This test suite has been checked in Ubuntu 16.04 using Python 3.5.2.
 It must be runnable in other Linux distributive and with other versions of Python 3.
 
 ### Prerequisites
-To run the test suite at a local computer several packages must be installed (for Ubuntu 16.04):
-1. `nfs-kernel-server`
-2. `nfs-common`
-3. `nfs4-acl-tools` (utilities `nfs4_setfacl` and `nfs4_getfacl` are used)
+To run the test suite at a local computer several packages must be installed (for Ubuntu 16.04):  
+1. `nfs-kernel-server`  
+2. `nfs-common`  
+3. `nfs4-acl-tools` (utilities `nfs4_setfacl` and `nfs4_getfacl` are used)  
 
 This test suite has been run with the following content of `/etc/exports`:  
 `/opt/testnfs 127.0.0.1(rw)` 
